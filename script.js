@@ -1,36 +1,44 @@
 //global variables
-let choice1 = document.getElementById("choice1").textContent;
-let choice2 = document.getElementById("choice2").textContent;
-let choice3 = document.getElementById("choice3").textContent;
-let choice4 = document.getElementById("choice4").textContent;
-let sectionText = document.getElementsByTagName("section").textContent;
-let timerDisplay = document.getElementById("timer").textContent;
-console.log(choice1);
-console.log(timerDisplay);
 
 //descending timer
 let timer = function () {
 	let sec = 10;
-	setInterval(function () {
+	let interval = setInterval(function () {
 		document.getElementById("timer").textContent =
 			sec + " sec remaining";
 		sec--;
 		console.log(sec);
-		if (sec == 00) {
-			clearInterval(timer);
-			sectionText = "game over";
+		if (sec < 00) {
+			clearInterval(interval);
+			document.querySelector("section").textContent =
+				"game over! your score is " + sec;
 		}
 	}, 1000);
 };
+
 //scoring
+let newScore = sec;
 
 //scoring and highscore bank
-// let newScore = sec + correct;
 // let highScoreBank = [];
 // if (newScore > oldScore) {
 // 	newScore.unshift(highScoreBank);
 // }
-//questionsboard
 
-//button choices
-timer();
+//questionsboard
+questionbank = [
+	"what does 2 + 2 = ?",
+	"what does 7 + 6 = ?",
+	"what does 2 + 7 = ?",
+	"what does 0 + 9 = ?",
+	"what does 2 + 1 = ?",
+	"what does 4 + 4 = ?",
+	"what does 6 + 5 = ?",
+	"what does 8 + 2 = ?",
+	"what does 1 + 5 = ?",
+	"what does 1 + 1 = ?",
+];
+
+//buttons
+
+// timer();
