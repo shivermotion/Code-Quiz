@@ -8,8 +8,6 @@ let timerDisplay = document.getElementById("timer").textContent;
 console.log(choice1);
 console.log(timerDisplay);
 
-//site on load
-
 //descending timer
 let timer = function () {
 	let sec = 10;
@@ -17,11 +15,12 @@ let timer = function () {
 		document.getElementById("timer").textContent =
 			sec + " sec remaining";
 		sec--;
-		if (sec == 0) {
-			sectionText = "GAME OVER";
+		console.log(sec);
+		if (sec == 00) {
+			clearInterval(timer);
+			sectionText = "game over";
 		}
 	}, 1000);
-	console.log(sec);
 };
 //scoring
 

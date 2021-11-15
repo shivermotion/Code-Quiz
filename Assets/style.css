@@ -2,8 +2,13 @@ details:hover {
 	background-color: yellow;
 }
 body > ol {
-	padding-left: 35rem;
-	margin-top: 10rem;
+	/* padding-left: 35rem; */
+	text-align: center;
+	margin-top: 2rem;
+	padding-left: 1rem;
+	display: flexbox;
+	/* justify-content: center; */
+	list-style: none;
 }
 
 button {
@@ -31,11 +36,13 @@ timer {
 	border-color: black;
 	font-size: xx-large;
 	border-radius: 90px;
-	margin-left: 90rem;
+	/* margin-left: 90rem; */
 	font-family: monospace;
 	padding: 10px;
 	display: flex;
-	white-space: nowrap;
+	/* white-space: nowrap; */
+	text-align: center;
+	justify-content: right;
 }
 
 /* *
