@@ -51,9 +51,9 @@ let game = function () {
 	};
 };
 
-//descending timer
+// descending timer
 let timer = function () {
-	let sec = 99;
+	let sec = 30;
 	let interval = setInterval(function () {
 		document.getElementById("timer").textContent =
 			sec + " sec remaining";
@@ -62,7 +62,7 @@ let timer = function () {
 		if (sec < 00) {
 			clearInterval(interval);
 			document.querySelector("section").textContent =
-				"game over! your score is " + sec;
+				"game over! your score is " + totalScore;
 		}
 	}, 1000);
 };
