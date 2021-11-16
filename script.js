@@ -48,6 +48,61 @@ let game = function () {
 		choice2.textContent = answerBank[4];
 		choice3.textContent = answerBank[8];
 		choice4.textContent = answerBank[1];
+
+		choice1.onclick = function () {
+			totalScore++;
+			console.log(totalScore);
+			// question 3
+			questionBoard.textContent = questionBank[2];
+			// choices
+			choice1.textContent = answerBank[5];
+			choice2.textContent = answerBank[8];
+			choice3.textContent = answerBank[9];
+			choice4.textContent = answerBank[0];
+
+			//if user picks correct answer
+			choice3.onclick = function () {
+				totalScore++;
+				console.log(totalScore);
+				// question 4
+				questionBoard.textContent = questionBank[3];
+				// choices
+				choice1.textContent = answerBank[0];
+				choice2.textContent = answerBank[2];
+				choice3.textContent = answerBank[3];
+				choice4.textContent = answerBank[9];
+				//if user picks correct answer
+				choice4.onclick = function () {
+					totalScore++;
+					console.log(totalScore);
+					// question 5
+					questionBoard.textContent =
+						questionBank[4];
+					// choices
+					choice1.textContent = answerBank[0];
+					choice2.textContent = answerBank[2];
+					choice3.textContent = answerBank[3];
+					choice4.textContent = answerBank[9];
+
+					choice4.onclick = function () {
+						totalScore++;
+						console.log(totalScore);
+						// question 6
+						questionBoard.textContent =
+							questionBank[5];
+						// choices
+						choice1.textContent =
+							answerBank[0];
+						choice2.textContent =
+							answerBank[2];
+						choice3.textContent =
+							answerBank[3];
+						choice4.textContent =
+							answerBank[9];
+					};
+				};
+			};
+		};
 	};
 };
 
@@ -66,22 +121,3 @@ let timer = function () {
 		}
 	}, 1000);
 };
-
-//scoring
-// let newScore = sec;
-
-//scoring and highscore bank
-// let highScoreBank = [];
-// if (newScore > oldScore) {
-// 	newScore.unshift(highScoreBank);
-// }
-
-//questionsboard
-
-// let answerBank []
-// let question = questionBank[(Math.random() * questionBank.length) | 0];
-// console.log(question);
-
-//buttons
-
-// timer();
