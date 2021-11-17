@@ -1,4 +1,5 @@
 # web_api_quiz
+Github Pages: https://shivermotion.github.io/web_api_quiz/
 
 Simple quiz using math problems to demonstrate html,js, and css.
 
