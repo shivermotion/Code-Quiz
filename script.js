@@ -4,8 +4,8 @@ let totalScore = 0;
 let currentQuestion = 0;
 
 //highscorebank
-
 let highscoreBank = [];
+
 //game-question and matching answers
 let questionBank = [
 	"what does 2 + 2 = ?",
