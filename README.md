@@ -1,6 +1,34 @@
-# web_api_quiz
-Github Pages: https://shivermotion.github.io/web_api_quiz/
 
-Simple quiz using math problems to demonstrate html,js, and css.
+# Super-Code-Quiz-Hyper-Fighting-Edition
+	
+# Table of Content
+-[description](#description)
+-[installation](#installation)
+-[usage](#usage)
+-[licenses](#licenses)
+-[contribution](#contribution)
+-[test](#test)
+-[username](#username)
+-[profile](#profile)
 
-![code_quiz_mock](https://user-images.githubusercontent.com/75548830/141929109-0a36c0a3-f664-4205-a25e-0eeb5b6873ba.png)
+## Username:
+shivermotion
+## Description:
+A timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code
+## Installation:
+
+## Usage:
+
+
+## Licenses:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+https://opensource.org/licenses/MIT
+
+## Contribution:
+
+## Test:
+
+## Email:
+jason.day.blue@gmail.com
+## Profile:
+https://github.com/shivermotion
