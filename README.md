@@ -1,6 +1,7 @@
 
 # Super-Code-Quiz-Hyper-Fighting-Edition
-	
+![code-quiz-mock](https://user-images.githubusercontent.com/75548830/147193325-5b4c79f3-f3f0-4128-9a84-372a16e2b993.png)
+### Repo:https://github.com/shivermotion/Code-Quiz    GitHub Pages: https://shivermotion.github.io/Code-Quiz/
 # Table of Content
 -[description](#description)
 -[installation](#installation)
