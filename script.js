@@ -1,6 +1,4 @@
 let game = () => {
-	//reveal button choices on start by removing style property "hidden" in element
-	choiceEl.style = "";
 	let currentScore = 0;
 	//question board and multiple choice buttons
 	let board = document.querySelector("board");
@@ -10,7 +8,7 @@ let game = () => {
 	let btn3 = document.getElementById("3");
 	let btn4 = document.getElementById("4");
 	//timer html and timer interval
-	let secondsLeft = 10;
+	let secondsLeft = 30;
 	let timeEl = document.querySelector(".timeEl");
 
 	//timer function
@@ -34,13 +32,14 @@ let game = () => {
 	//add point to score when correct
 	let correct = () => {
 		currentScore++;
+		secondsLeft += 5;
 		console.log("currentscore: " + currentScore);
 	};
 
 	//game board questions,choices,answers
 	question1 = () => {
 		board.textContent = "what is javascript?";
-		btn1.textContent = "a programming language";
+		btn1.textContent = "a programming language"; //correct
 		btn2.textContent = "a latin language";
 		btn3.textContent = "a nordic language";
 		btn4.textContent = "a type of computer";
@@ -56,7 +55,7 @@ let game = () => {
 		board.textContent =
 			"which syntax allows you to declare variable?";
 		btn1.textContent = "appear";
-		btn2.textContent = "let";
+		btn2.textContent = "let"; //correct
 		btn3.textContent = "shazam";
 		btn4.textContent = "declare";
 
@@ -113,53 +112,86 @@ let game = () => {
 	};
 	question6 = () => {
 		//remove event listener for correct answer
-		btn3.addEventListener("click", correct);
-		btn3.addEventListener("click", question6);
+		btn2.removeEventListener("click", correct);
+		btn2.removeEventListener("click", question6);
 
-		board.textContent = "what is javascript?";
-		btn1.textContent = "a programming language";
-		btn2.textContent = "a latin language";
-		btn3.textContent = "a nordic language";
-		btn4.textContent = "a type of computer";
+		board.textContent =
+			"what are the 3 essential primitives types in javascript?";
+		btn1.textContent = "string,number,boolean";
+		btn2.textContent = "cent,scent,sent";
+		btn3.textContent = "int,bint,djent";
+		btn4.textContent = "rope,math,bullion";
 
 		//add event listener for correct answer
-		btn3.addEventListener("click", correct);
-		btn3.addEventListener("click", question7);
+		btn1.addEventListener("click", correct);
+		btn1.addEventListener("click", question7);
 	};
 	question7 = () => {
 		//remove event listener for correct answer
-		btn3.addEventListener("click", correct);
-		btn3.addEventListener("click", question5);
-		board.textContent = "what is javascript?";
-		btn1.textContent = "a programming language";
-		btn2.textContent = "a latin language";
-		btn3.textContent = "a nordic language";
-		btn4.textContent = "a type of computer";
+		btn1.removeEventListener("click", correct);
+		btn1.removeEventListener("click", question7);
+
+		board.textContent = "what is DOM stand for?";
+		btn1.textContent = "document,observer,medal";
+		btn2.textContent = "dinosaur,omniscient, mytosis";
+		btn3.textContent = "deli,onion,mayonnaise";
+		btn4.textContent = "document,object,model";
+
+		//add event listener for correct answer
+		btn4.addEventListener("click", correct);
+		btn4.addEventListener("click", question8);
 	};
 	question8 = () => {
-		board.textContent = "what is javascript?";
-		btn1.textContent = "a programming language";
-		btn2.textContent = "a latin language";
-		btn3.textContent = "a nordic language";
-		btn4.textContent = "a type of computer";
+		//remove event listener for correct answer
+		btn4.removeEventListener("click", correct);
+		btn4.removeEventListener("click", question8);
+
+		board.textContent =
+			"how do you log to the console as a developer?";
+		btn1.textContent = "console.log()";
+		btn2.textContent = "log.console()";
+		btn3.textContent = "writeTo()";
+		btn4.textContent = "hey()";
+
+		//add event listener for correct answer
+		btn1.addEventListener("click", correct);
+		btn1.addEventListener("click", question9);
 	};
 	question9 = () => {
-		board.textContent = "what is javascript?";
-		btn1.textContent = "a programming language";
-		btn2.textContent = "a latin language";
-		btn3.textContent = "a nordic language";
-		btn4.textContent = "a type of computer";
+		//remove event listener for correct answer
+		btn1.removeEventListener("click", correct);
+		btn1.removeEventListener("click", question9);
+
+		board.textContent = "how does a FOR loop start?";
+		btn1.textContent = "for(i = 0; i < 5; i++)";
+		btn2.textContent = "for (i <= 5; i++)";
+		btn3.textContent = "for(i++)";
+		btn4.textContent = "forI = ++()";
+
+		//add event listener for correct answer
+		btn1.addEventListener("click", correct);
+		btn1.addEventListener("click", question10);
 	};
 	question10 = () => {
-		board.textContent = "what is javascript?";
-		btn1.textContent = "a programming language";
-		btn2.textContent = "a latin language";
-		btn3.textContent = "a nordic language";
-		btn4.textContent = "a type of computer";
+		//remove event listener for correct answer
+		btn1.removeEventListener("click", correct);
+		btn1.removeEventListener("click", question10);
+
+		board.textContent =
+			"How do you write 'Hello World' in an alert box?";
+		btn1.textContent = "alertBox('Hello World');";
+		btn2.textContent = "alert('Hello World');";
+		btn3.textContent = "msg('Hello World');";
+		btn4.textContent = "msgBox('Hello World');";
+
+		//add event listener for correct answer
+		btn2.addEventListener("click", correct);
 	};
 
 	//initialize timer
 	setTime();
 	//initialize 1st question
 	question1();
+	//reveal button choices on start by removing style property "hidden" in element
+	choiceEl.style = "";
 };
