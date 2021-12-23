@@ -2,12 +2,13 @@ let game = () => {
 	//current score
 	let currentScore = 0;
 	//question board and multiple choice buttons
-	let board = document.querySelector("board");
+	let board = document.getElementById("board");
 	let choiceEl = document.getElementById("choices");
 	let btn1 = document.getElementById("1");
 	let btn2 = document.getElementById("2");
 	let btn3 = document.getElementById("3");
 	let btn4 = document.getElementById("4");
+	let saveName = document.getElementById("saveName");
 	//timer html and timer interval
 	let secondsLeft = 30;
 	let timeEl = document.querySelector(".timeEl");
@@ -31,19 +32,32 @@ let game = () => {
 			}
 		}, 1000);
 	};
-
-	//add point to score when correct
+	//add point to score and extra time when correct
 	let correct = () => {
+		//add score
 		currentScore++;
+		//set to local storage
+		localStorage.setItem("score", currentScore);
+		console.log("score in storage: " + localStorage.score);
+		//add 5 sec for correct answer
 		secondsLeft += 5;
-		console.log("currentscore: " + currentScore);
+		console.log("current score: " + currentScore);
 	};
 	// minus 1 sec when wrong
 	let wrong = () => {
 		secondsLeft--;
 		console.log("oops -1 sec");
+		//set to local storage
+		localStorage.setItem("score", currentScore);
+		console.log("score in storage: " + localStorage.score);
 	};
-
+	//initialize score screen
+	let registerScore = () => {
+		choiceEl.style = "display: none";
+		board.textContent =
+			"Complete! - Enter your name to immortalize yourself in the Hall of Fame!";
+		board.appendChild(saveName).style = "";
+	};
 	//game board questions,choices,answers
 	question1 = () => {
 		board.textContent = "what is javascript?";
@@ -303,9 +317,13 @@ let game = () => {
 
 		//add event listener for correct answer
 		btn1.addEventListener("click", wrong);
+		btn1.addEventListener("click", registerScore);
 		btn2.addEventListener("click", correct);
+		btn2.addEventListener("click", registerScore);
 		btn3.addEventListener("click", wrong);
+		btn3.addEventListener("click", registerScore);
 		btn4.addEventListener("click", wrong);
+		btn4.addEventListener("click", registerScore);
 	};
 
 	//initialize timer
