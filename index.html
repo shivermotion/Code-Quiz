@@ -26,7 +26,7 @@
                 <ul class="navbar-nav">
                     <!--highscore button-->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./highscores.html">
+                        <a class="nav-link active" aria-current="page" id="highScorePage" href="./highscores.html">
                             View High Scores
                         </a>
                     </li>
@@ -42,7 +42,7 @@
     <!--main container-->
     <main class=".container">
         <!--Title-->
-        <h1>Super Code Quiz: Hyper Fighting Edition</h1>
+        <h1 id="header">Super Code Quiz: Hyper Fighting Edition</h1>
         <!--Questionboard-->
         <div class="row">
             <board id="board" class="col">
@@ -50,8 +50,8 @@
                 To Start, Click the Button.
                 <button id="submit" onclick="game()" style="display:flexbox;">GO</button>
                 <!--at score screen, display this-->
-                <input style="display: none;" type="text" name="" id="inputName">
-                <button id="saveName" style="display:none;">Save</button>
+                <input style="display: none;" type="text" name="saveName" id="inputName">
+                <button id="saveName" onclick="setName()" style="display:none;">Save</button>
             </board>
         </div>
     </main>

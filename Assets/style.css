@@ -4,17 +4,22 @@ main {
 
 board {
 	border-style: groove;
-	border-color: black;
+	border-color: rgb(43, 97, 214);
 	padding: 10rem;
 }
 
 multiple-choices {
-	border-color: brown;
+	border-color: rgb(219, 10, 10);
 	border-style: solid;
-	padding: 50px;
+	/* padding: 50px; */
 }
 
 ul {
+	border-color: rgb(4, 221, 33);
+	border-style: solid;
+	text-align: center;
+}
+multiple-choices > ul {
 	border-color: black;
 	border-style: solid;
 	text-align: center;
@@ -25,4 +30,5 @@ button {
 	padding: 10px;
 	margin: 3px;
 	border-radius: 90px;
+	height: 100%;
 }

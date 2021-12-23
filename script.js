@@ -10,6 +10,7 @@ let game = () => {
 	let btn4 = document.getElementById("4");
 	let saveName = document.getElementById("saveName");
 	let inputName = document.getElementById("inputName");
+	let headerName = document.getElementById("header");
 	//timer html and timer interval
 	let secondsLeft = 30;
 	let timeEl = document.querySelector(".timeEl");
@@ -53,12 +54,25 @@ let game = () => {
 		console.log("score in storage: " + localStorage.score);
 	};
 	//initialize score input screen
-	let registerScore = () => {
+	let scoreScreen = () => {
 		choiceEl.style = "display: none";
 		board.textContent =
 			"Complete! - Enter your name to immortalize yourself in the Hall of Fame!";
 		board.appendChild(saveName).style = "";
 		board.appendChild(inputName).style = "";
+	};
+	//save name to local storage
+	setName = () => {
+		localStorage.setItem("name", inputName.value);
+		console.log(inputName.value);
+		console.log(localStorage.getItem("score", currentScore));
+
+		headerName.innerHTML = "Last Game Score";
+		board.textContent =
+			"Name: " +
+			localStorage.getItem("name", inputName.value) +
+			" Score: " +
+			localStorage.getItem("score", currentScore.value);
 	};
 	//game board questions,choices,answers
 	question1 = () => {
@@ -319,13 +333,13 @@ let game = () => {
 
 		//add event listener for correct answer
 		btn1.addEventListener("click", wrong);
-		btn1.addEventListener("click", registerScore);
+		btn1.addEventListener("click", scoreScreen);
 		btn2.addEventListener("click", correct);
-		btn2.addEventListener("click", registerScore);
+		btn2.addEventListener("click", scoreScreen);
 		btn3.addEventListener("click", wrong);
-		btn3.addEventListener("click", registerScore);
+		btn3.addEventListener("click", scoreScreen);
 		btn4.addEventListener("click", wrong);
-		btn4.addEventListener("click", registerScore);
+		btn4.addEventListener("click", scoreScreen);
 	};
 
 	//initialize timer
