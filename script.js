@@ -9,6 +9,7 @@ let game = () => {
 	let btn3 = document.getElementById("3");
 	let btn4 = document.getElementById("4");
 	let saveName = document.getElementById("saveName");
+	let inputName = document.getElementById("inputName");
 	//timer html and timer interval
 	let secondsLeft = 30;
 	let timeEl = document.querySelector(".timeEl");
@@ -51,12 +52,13 @@ let game = () => {
 		localStorage.setItem("score", currentScore);
 		console.log("score in storage: " + localStorage.score);
 	};
-	//initialize score screen
+	//initialize score input screen
 	let registerScore = () => {
 		choiceEl.style = "display: none";
 		board.textContent =
 			"Complete! - Enter your name to immortalize yourself in the Hall of Fame!";
 		board.appendChild(saveName).style = "";
+		board.appendChild(inputName).style = "";
 	};
 	//game board questions,choices,answers
 	question1 = () => {
